@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling for Impact—Preparing for 1 Million Users | Vishwanath Arekatika</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container nav-container">
+            <a href="../index.html" class="logo">VISHWANATH<span>.</span></a>
+            
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blogs.html" class="active">Engineering Journal</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="../blogs.html" class="active">Engineering Journal</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="text-content">
+            <a href="../blogs.html" class="back-link">&larr; Back to Engineering Journal</a>
+            <header class="post-header">
+                <span class="post-date">Dec 30, 2025</span>
+                <h1>Scaling for Impact—Preparing Emergency QR for 1 Million Users</h1>
+                <p class="post-subtitle" style="color: var(--primary-color); font-weight: 700; margin-top: 1rem; font-size: 1.25rem;">Article 4: High-Scale Systems Architecture</p>
+            </header>
+            
+            <div class="post-content">
+                <section>
+                    <p>Building a project for 1,000,000 users during an emergency is an engineering challenge. Here is my roadmap for scaling to handle massive concurrent traffic.</p>
+                </section>
+
+                <section>
+                    <h2> 1. The Database: From Single Instance to Sharding</h2>
+                    <p>At scale, a single MongoDB primary node becomes a bottleneck.</p>
+                    <ul>
+                        <li><strong>Database Sharding:</strong> Partition data based on region to distribute global load.</li>
+                        <li><strong>Read Replicas:</strong> Offload "Scan" traffic to distributed replicas.</li>
+                        <li><strong>Indexing:</strong> Optimize query patterns to O(log n).</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2> 2. The Application Layer: Load Balancing & Caching</h2>
+                    <ul>
+                        <li><strong>Horizontal Scaling:</strong> Cluster instances managed by an Nginx/AWS ALB load balancer.</li>
+                        <li><strong>Redis Caching:</strong> Use in-memory cache for contact data to reduce DB hits by ~80%.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2> 3. The Edge: Global Content Delivery (CDN)</h2>
+                    <ul>
+                        <li><strong>CDN Deployment:</strong> Serve static assets from Edge locations (Cloudflare/AWS).</li>
+                        <li><strong>PWA & Service Workers:</strong> Ensure instant loads even on weak emergency signals.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2> 4. Infrastructure & Monitoring</h2>
+                    <ul>
+                        <li><strong>Kubernetes:</strong> Auto-scale server instances based on real-time traffic demand.</li>
+                        <li><strong>ELK Stack:</strong> Centralized observability to resolve regional issues instantly.</li>
+                    </ul>
+                </section>
+
+                <section style="margin-top: 4rem; padding: 2.5rem; background: var(--hero-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3>🔗 Project Links</h3>
+                    <p style="margin-bottom: 0.8rem;"><strong>Live Prototype:</strong> <a href="https://emergencyqrportal.netlify.app/" target="_blank" style="color: var(--primary-color); font-weight: 700;">Emergency QR Portal &nearrow;</a></p>
+                    <p><strong>Current Architecture:</strong> <a href="https://github.com/vishwanath-arekatika/EmergencyQR.git" target="_blank" style="color: var(--primary-color); font-weight: 700;">GitHub Repository &nearrow;</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Vishwanath Arekatika. SDE & Full Stack Engineer.</p>
+        </div>
+    </footer>
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Reliability: Deep Dive into Tech Stack | Vishwanath Arekatika</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container nav-container">
+            <a href="../index.html" class="logo">VISHWANATH<span>.</span></a>
+            
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blogs.html" class="active">Engineering Journal</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="../blogs.html" class="active">Engineering Journal</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="text-content">
+            <a href="../blogs.html" class="back-link">&larr; Back to Engineering Journal</a>
+            <header class="post-header">
+                <span class="post-date">Dec 22, 2025</span>
+                <h1>Engineering Reliability—A Deep Dive into the Tech Stack</h1>
+                <p class="post-subtitle" style="color: var(--primary-color); font-weight: 700; margin-top: 1rem; font-size: 1.25rem;">Article 2: Technical Architecture</p>
+            </header>
+            
+            <div class="post-content">
+                <section>
+                    <h2>The Architecture: A Modern MERN Approach</h2>
+                    <p>When building a system meant for emergencies, the two most important technical requirements are <strong>Speed</strong> and <strong>Availability</strong>. A responder scanning a code shouldn't wait 10 seconds for a page to load.</p>
+                    <p>To achieve this, I chose a decoupled architecture using the <strong>MERN Stack</strong>, deploying the frontend on Netlify and the backend on Render to ensure high availability.</p>
+                </section>
+
+                <section>
+                    <h2>Frontend: Beyond the Basics with React 18 & Vite</h2>
+                    <p>While many developers still use Create React App (CRA), I opted for <strong>Vite</strong> for superior performance and optimized builds.</p>
+                    <ul>
+                        <li><strong>Performance:</strong> Vite uses native ES modules for instant server starts.</li>
+                        <li><strong>Build Optimization:</strong> Vite’s Rollup-based build ensures a minimal production footprint.</li>
+                        <li><strong>HMR:</strong> Near-instant reflection of UI changes during development.</li>
+                    </ul>
+                    <p><strong>UI Strategy: Tailwind CSS</strong><br>
+                    Tailwind allowed for a responsive, high-contrast interface critical for emergency visibility.</p>
+                </section>
+
+                <section>
+                    <h2>Backend: Building a Scalable API</h2>
+                    <p>The backend handles authenticated requests for management and public read-only requests for responders.</p>
+                    <p><strong>Why MongoDB?</strong><br>
+                    MongoDB’s <strong>flexible schema</strong> handles the variation in user contact data seamlessly without rigid migrations.</p>
+                </section>
+
+                <section>
+                    <h2>Security: JWT & Bcrypt</h2>
+                    <ul>
+                        <li><strong>Authentication:</strong> <strong>JWT</strong> for a scalable, stateless backend.</li>
+                        <li><strong>Data Protection:</strong> Passwords encrypted using <strong>bcrypt</strong> with salt factor 10.</li>
+                        <li><strong>Cookie Security:</strong> <code>httpOnly</code> cookies for XSS protection.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The QR Logic: Data vs. URL</h2>
+                    <p><strong>My Approach:</strong> The QR code contains a <strong>signed URL</strong>. This "Dynamic QR" experience means users can update their details without printing a new code.</p>
+                </section>
+
+                <section style="margin-top: 4rem; padding: 2.5rem; background: var(--hero-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3>🔗 Project Resources</h3>
+                    <p style="margin-bottom: 0.8rem;"><strong>Live Application:</strong> <a href="https://emergencyqrportal.netlify.app/" target="_blank" style="color: var(--primary-color); font-weight: 700;">View Project &nearrow;</a></p>
+                    <p><strong>Backend Source:</strong> <a href="https://github.com/vishwanath-arekatika/EmergencyQR.git" target="_blank" style="color: var(--primary-color); font-weight: 700;">GitHub Repository &nearrow;</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Vishwanath Arekatika. SDE & Full Stack Engineer.</p>
+        </div>
+    </footer>
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

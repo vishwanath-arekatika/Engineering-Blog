@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Check: Three Biggest Challenges | Vishwanath Arekatika</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container nav-container">
+            <a href="../index.html" class="logo">VISHWANATH<span>.</span></a>
+            
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blogs.html" class="active">Engineering Journal</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="../blogs.html" class="active">Engineering Journal</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="text-content">
+            <a href="../blogs.html" class="back-link">&larr; Back to Engineering Journal</a>
+            <header class="post-header">
+                <span class="post-date">Dec 25, 2025</span>
+                <h1>Reality Check—Solving the Three Biggest Challenges of Deployment</h1>
+                <p class="post-subtitle" style="color: var(--primary-color); font-weight: 700; margin-top: 1rem; font-size: 1.25rem;">Article 3: Real-World Problem Solving</p>
+            </header>
+            
+            <div class="post-content">
+                <section>
+                    <p>The gap between a "project that works" and a "project that is deployed" is where the real learning happens. Here are the hurdles I faced when taking Emergency QR live.</p>
+                </section>
+
+                <section>
+                    <h2>Challenge 1: The CORS & Cookie Nightmare</h2>
+                    <p>Once deployed, cookies containing my JWT were being dropped because of cross-origin policies.</p>
+                    <p><strong>The Fix:</strong> Explicitly white-listed the Netlify domain, set <code>withCredentials: true</code> in Axios, and updated cookie headers to <code>SameSite: 'none'</code> and <code>Secure: true</code>.</p>
+                    <pre><code class="language-javascript">// The Production Fix
+res.cookie('token', token, {
+  httpOnly: true,
+  secure: true,    
+  sameSite: 'none', 
+  maxAge: 7 * 24 * 60 * 60 * 1000 
+});</code></pre>
+                </section>
+
+                <section>
+                    <h2>Challenge 2: The "Broken" Deployment Build</h2>
+                    <p>Deployment failed on Render because the client-side build wasn't triggered correctly in the monorepo.</p>
+                    <p><strong>The Fix:</strong> Implemented a <strong>Post-Install Script</strong> to build React production files before the Node server start.</p>
+                </section>
+
+                <section>
+                    <h2>Challenge 3: Environment Variable Mismatch</h2>
+                    <p>Vite handles environment variables differently. My frontend couldn't see the backend URL because of prefixing rules.</p>
+                    <p><strong>The Fix:</strong> Prefixed variables with <code>VITE_</code> and synchronized secrets manually in the platform dashboards.</p>
+                </section>
+
+                <section>
+                    <h2>My Debugging Framework</h2>
+                    <ol>
+                        <li><strong>Isolate:</strong> Determine the scope of the bug.</li>
+                        <li><strong>Reproduce:</strong> Confirm the behavior consistently.</li>
+                        <li><strong>Research:</strong> Consult documentation (MDN, Vite).</li>
+                        <li><strong>Verify:</strong> Test the fix in staging.</li>
+                    </ol>
+                </section>
+
+                <section style="margin-top: 4rem; padding: 2.5rem; background: var(--hero-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3>🔗 Live Links</h3>
+                    <p style="margin-bottom: 0.8rem;"><strong>Experience the Live Fix:</strong> <a href="https://emergencyqrportal.netlify.app/" target="_blank" style="color: var(--primary-color); font-weight: 700;">Emergency QR Portal &nearrow;</a></p>
+                    <p><strong>Inspect the Code:</strong> <a href="https://github.com/vishwanath-arekatika/EmergencyQR.git" target="_blank" style="color: var(--primary-color); font-weight: 700;">GitHub Repository &nearrow;</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Vishwanath Arekatika. SDE & Full Stack Engineer.</p>
+        </div>
+    </footer>
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

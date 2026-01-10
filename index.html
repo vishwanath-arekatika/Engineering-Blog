@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwanath Arekatika | Engineering Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">VISHWANATH<span>.</span></a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="blogs.html">Engineering Journal</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="blogs.html">Engineering Journal</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <p class="hero-tag">Engineering Journal</p>
+                <h1>Vishwanath Arekatika</h1>
+                <h2 class="hero-title">Full Stack Developer | Software Development Engineer (SDE)</h2>
+                <div class="hero-summary">
+                    <p>Enthusiastic Computer Science graduate and Full-Stack Developer proficient in the MERN stack, dedicated to building secure, scalable applications with a strong foundation in Python and DSA.</p>
+                    <p>Hands-on experience in cloud infrastructure via AWS and a proven ability to implement security best practices like JWT and input sanitization to deliver robust software solutions.</p>
+                </div>
+                <div class="hero-btns">
+                    <a href="blogs.html" class="btn btn-primary">Read Technical Articles</a>
+                    <div class="external-links">
+                        <a href="https://linkedin.com/in/vishwanath-arekatika" target="_blank">LinkedIn</a>
+                        <span class="dot">•</span>
+                        <a href="https://github.com/vishwanath-arekatika" target="_blank">GitHub</a>
+                        <span class="dot">•</span>
+                        <a href="https://leetcode.com/u/Vishwanath_Arekatika/" target="_blank">LeetCode</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-blogs container">
+            <div class="section-header">
+                <h2>Latest Insights</h2>
+                <a href="blogs.html" class="link-more">All Articles &rarr;</a>
+            </div>
+            <div id="featured-list" class="blog-grid">
+                <!-- Data will be populated by main.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Vishwanath Arekatika. SDE & Full Stack Engineer.</p>
+        </div>
+    </footer>
+
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Common Languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Code—Saving Critical Seconds with Emergency QR | Vishwanath Arekatika</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="container nav-container">
+            <a href="../index.html" class="logo">VISHWANATH<span>.</span></a>
+            
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blogs.html" class="active">Engineering Journal</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="theme-btn">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="../blogs.html" class="active">Engineering Journal</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="text-content">
+            <a href="../blogs.html" class="back-link">&larr; Back to Engineering Journal</a>
+            <header class="post-header">
+                <span class="post-date">Dec 20, 2025</span>
+                <h1>Beyond Code—Saving Critical Seconds with Emergency QR</h1>
+                <p class="post-subtitle" style="color: var(--primary-color); font-weight: 700; margin-top: 1rem; font-size: 1.25rem;">Article 1: The Vision & Impact</p>
+            </header>
+            
+            <div class="post-content">
+                <section>
+                    <h2>The Vision: Why This Project Exists</h2>
+                    <p>In a crisis, every second counts. Whether it’s a road accident or a child getting lost, the biggest hurdle for first responders is often the <strong>inability to contact the right people immediately.</strong> I built <strong>Emergency QR</strong> to solve this specific gap. It is a digital bridge between a person in distress and their family, ensuring that help isn't just professional, but personal.</p>
+                </section>
+
+                <section>
+                    <h2>The Core Problem: The Communication Gap</h2>
+                    <p>Most people carry smartphones, but in an emergency, those phones are often <strong>locked</strong>. Bystanders and emergency services have no way to:</p>
+                    <ul>
+                        <li>Identify who the person is.</li>
+                        <li>Find out who to call (Parents/Guardians).</li>
+                        <li>Notify the family about the location of the emergency.</li>
+                    </ul>
+                    <p><strong>Emergency QR</strong> provides a solution that works without needing to unlock a phone or search through a wallet.</p>
+                </section>
+
+                <section>
+                    <h2>The Solution: Instant Parental Contact Access</h2>
+                    <p>The primary goal of this platform is <strong>Intimation</strong>. By scanning a unique, user-generated QR code, anyone can instantly access the designated emergency contacts.</p>
+                    
+                    <h3>How it works for the User:</h3>
+                    <ol>
+                        <li><strong>Simple Onboarding:</strong> Users sign up and provide their primary emergency contact details.</li>
+                        <li><strong>QR Generation:</strong> The system generates a unique QR code linked to that user’s specific contact data.</li>
+                        <li><strong>Physical Placement:</strong> Users can print this QR and place it on their vehicle, ID card, or keychain.</li>
+                    </ol>
+
+                    <h3>How it works for the Responder:</h3>
+                    <ol>
+                        <li><strong>Instant Scan:</strong> No app is required. A simple scan using any smartphone camera reveals the emergency dashboard.</li>
+                        <li><strong>Direct Contact:</strong> The responder sees the <strong>Parental/Emergency Contacts</strong> and can call them immediately.</li>
+                        <li><strong>Location Awareness:</strong> The system helps bridge the distance by providing immediate contact information.</li>
+                    </ol>
+
+                    <blockquote style="border-left: 4px solid var(--primary-color); padding: 1.5rem; background: var(--hero-bg); margin: 2rem 0; font-style: italic; color: var(--text-muted); border-radius: 0 8px 8px 0;">
+                        <strong>Note on Privacy & Scope:</strong> Unlike complex medical databases, this project focuses strictly on <strong>Emergency Contact Intimation</strong>. By keeping the scope focused on parental contact access, we ensure a faster response time and respect user privacy.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>The Strategic Tech Stack</h2>
+                    <p>To ensure this tool is reliable and fast, I chose the <strong>MERN Stack</strong> (MongoDB, Express, React, Node.js):</p>
+                    <ul>
+                        <li><strong>React 18 & Vite:</strong> For a lightning-fast, mobile-first user interface.</li>
+                        <li><strong>Node.js & Express:</strong> To handle the backend logic and secure API calls.</li>
+                        <li><strong>MongoDB:</strong> To store user data in a flexible format.</li>
+                        <li><strong>JWT Authentication:</strong> Ensuring that only authorized users can manage their info.</li>
+                    </ul>
+                </section>
+
+                <section style="margin-top: 4rem; padding: 2.5rem; background: var(--hero-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3>🔗 Project Links</h3>
+                    <p style="margin-bottom: 0.8rem;"><strong>Live Demo:</strong> <a href="https://emergencyqrportal.netlify.app/" target="_blank" style="color: var(--primary-color); font-weight: 700;">Emergency QR Portal &nearrow;</a></p>
+                    <p><strong>Source Code:</strong> <a href="https://github.com/vishwanath-arekatika/EmergencyQR.git" target="_blank" style="color: var(--primary-color); font-weight: 700;">GitHub Repository &nearrow;</a></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Vishwanath Arekatika. SDE & Full Stack Engineer.</p>
+        </div>
+    </footer>
+    <!-- Prism.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
