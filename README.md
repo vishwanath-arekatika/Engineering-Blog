@@ -8,7 +8,7 @@
 Welcome to my personal engineering journal. This repository contains my technical blog where I document architectural decisions, deep dives into the MERN stack, and the journey of building impact-driven software like **Emergency QR**.
 
 ## Live Demo
-Experience the live site here: **[ GitHub Pages URL will go here]**
+Experience the live site here: **https://vishwanath-arekatika.github.io/Engineering-Blog/**
 
 ---
 
